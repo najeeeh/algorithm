@@ -1,0 +1,26 @@
+ALGORITHM algorithm_name
+VAR
+    sentence[] : STRING;
+    nbr_leng:INTEGER:=0;
+    nbr_vowel: INTEGER:=0; 
+    nbr_word: INTEGER:=0;
+
+BEGIN
+    Write ('Please enter your sentence');
+    Read(sentence[]);
+    nbr_leng := length(sentence[]);
+    Write ('The length of your sentence is', nbr_leng);
+    FOR i FROM 0 TO (nbr_leng-1) STEP 1  DO
+        if (sentence[i]='a' OR sentence[i]='A' OR sentence[i]='e' 
+            OR sentence[i]='E' OR sentence[i]='i' OR sentence[i]='I' 
+            OR sentence[i]='o' OR sentence[i]='O' OR sentence[i]='U' OR sentence[i]='u') THEN
+        nbr_vowel := nbr_vowel+1;
+        END_IF   
+    WHILE (sentence[i]=' ' OR sentence[i]='.') DO
+            nbr_word := nbr_word+1;
+    END_WHILE          
+    END_FOR
+     Write('Vowels number is',nbr_vowel);
+     Write('Words number is ',nbr_word);
+    
+END
